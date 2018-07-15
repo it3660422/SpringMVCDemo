@@ -11,7 +11,7 @@ public class MyHomeController {
  @RequestMapping(value ="/",method = RequestMethod.GET)
  public ModelAndView myHome () {
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("xmy-home");
+		mav.setViewName("my-home");
 		mav.addObject("title", "xx");
 		mav.addObject("msg", "Testss");
 	 return mav;
