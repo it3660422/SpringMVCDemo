@@ -1,0 +1,524 @@
+Practice
+http://www.techcrashcourse.com/2016/02/c-program-to-print-triangle-pyramid-star-pattern.html
+http://www.techcrashcourse.com/2016/04/java-example-programs.html
+--------------------------------------------
+output
+* 
+* * 
+* * * 
+* * * * 
+* * * * * 
+
+int n = 5;
+StringBuffer sb = new StringBuffer();
+for (int i = 0; i <= n; i++) {
+   for (int j = 0; j <= i; j++) {
+      sb.append("x ");
+   }
+   sb.append("\n");
+}
+System.out.println(sb.toString());
+--------------------------------------------
+output
+        * 
+      * * 
+    * * * 
+  * * * * 
+* * * * *
+
+StringBuffer sb = new StringBuffer();
+int n = 5;
+// number of spaces
+int k = 2 * n - 2;
+// outer loop to handle number of rows
+for (int i = 0; i < n; i++) {
+   // inner loop to handle number spaces
+   for (int j = 0; j < k; j++) {
+      sb.append(" ");
+   }
+   // decrementing k after each loop
+   k = k - 2;
+   // inner loop to handle number of columns
+   for (int j = 0; j <= i; j++) {
+      sb.append("* ");
+   }
+   sb.append("\n");
+}
+System.out.println(sb.toString());
+-------------------------------------------
+output
+    * 
+   * * 
+  * * * 
+ * * * * 
+* * * * * 
+
+StringBuffer sb = new StringBuffer();
+int n = 5;
+// number of spaces
+int k = 2*n - 2;
+for (int i = 0; i < n; i++) {
+   // inner loop to handle number spaces
+   for (int j = 0; j < k; j++) {
+      sb.append(" ");
+   }
+   // decrementing k after each loop
+   k = k - 1;
+   // inner loop to handle number of columns
+   for (int j = 0; j <= i; j++) {
+      sb.append("* ");
+   }
+   sb.append("\n");
+}
+System.out.println(sb.toString());
+-------------------------------------------
+output
+1 
+2 2 
+3 3 3 
+4 4 4 4 
+5 5 5 5 5
+
+StringBuffer sb = new StringBuffer();
+int n = 5;
+// number of spaces
+int num = 1;
+for (int i = 0; i < n; i++) {
+   for (int j = 0; j <= i; j++) {
+      sb.append(num + " ");
+   }
+   sb.append("\n");
+   num = num + 1;
+}
+System.out.println(sb.toString());
+-------------------------------------------
+output
+1 
+2 3 
+4 5 6 
+7 8 9 10 
+11 12 13 14 15 
+
+StringBuffer sb = new StringBuffer();
+int n = 5;
+// number of spaces
+int num = 1;
+for (int i = 0; i < n; i++) {
+   for (int j = 0; j <= i; j++) {
+      sb.append(num + " ");
+      num = num + 1;
+   }
+   sb.append("\n");
+}
+System.out.println(sb.toString());
+-------------------------------------------
+output
+A 
+B B 
+C C C 
+D D D D 
+E E E E E 
+
+StringBuffer sb = new StringBuffer();
+int n = 5;
+// number of spaces
+int num = 65;
+for (int i = 0; i < n; i++) {
+   for (int j = 0; j <= i; j++) {
+      char ch = (char) num;
+      sb.append(ch + " ");
+   }
+   num = num + 1;
+   sb.append("\n");
+}
+System.out.println(sb.toString());
+-------------------------------------------
+output
+A 
+B C 
+D E F 
+G H I J 
+K L M N O 
+
+StringBuffer sb = new StringBuffer();
+int n = 5;
+// number of spaces
+int num = 65;
+for (int i = 0; i < n; i++) {
+   for (int j = 0; j <= i; j++) {
+      char ch = (char) num;
+      sb.append(ch + " ");
+      num = num + 1;
+   }
+   sb.append("\n");
+}
+System.out.println(sb.toString());
+--------------------------------------------
+output
+A B C D E D C B A 
+A B C D   D C B A 
+A B C       C B A 
+A B           B A 
+A               A 
+
+StringBuffer a = new StringBuffer();
+int n = 5;     
+for(int i=0;i<n;i++)
+{
+   for(int j=65;j<64+(2*n);j++)
+   { 
+      if(j>=(64+n)+i)
+         a.append((char)((64+n)-(j%(64+n)))+" ");
+      else if(j<=(64+n)-i)
+         a.append((char)j+" ");
+      else
+         a.append("  ");
+   }
+   a.append("\n");
+}
+System.out.println(a.toString());
+--------------------------------------------
+output
+*                 * 
+* *             * * 
+* * *         * * * 
+* * * *     * * * * 
+* * * * * * * * * * 
+
+StringBuffer a = new StringBuffer();
+int n = 5;
+int k = (n*2)-2;
+int i,j;     
+for (i = 1; i <= n; i++) {
+   for (j = 1; j <= i; j++) {
+      a.append("* ");
+   }
+   for (j = 1; j <= k; j++) {
+      a.append("  ");
+   }
+   k = k - 2;
+   for (j = 1; j <= i; j++) {
+      a.append("* ");
+   }
+   a.append("\n");
+}      
+System.out.println(a.toString());
+--------------------------------------------
+output
+*
+**
+* *
+*  *
+*****
+
+StringBuffer a = new StringBuffer();
+int n = 3;
+int h = n + 2;
+a.append("*\n");
+for (int i = 1; i <= n; i++) {
+   a.append("*");
+   for (int k = 1; k < i; k++) {
+      a.append(" ");
+   }
+   a.append("*\n");
+}
+for (int j = 1; j <= h; j++) {
+   a.append("*");
+}
+System.out.println(a.toString());
+-------------------------------------------
+output
+    *
+   ***
+  *****
+ *******
+*********
+ *******
+  *****
+   ***
+    *
+
+StringBuffer a = new StringBuffer();
+int n = 5;
+int space = n - 1;
+for (int k = 1; k <= n; k++) {
+   for (int c = 1; c <= space; c++) {
+      a.append(" ");
+   }
+   space--;
+   for (int c = 1; c <= 2 * k - 1; c++) {
+      a.append("*");
+   }
+   a.append("\n");
+}
+space = 1;
+for (int k = 1; k <= n - 1; k++) {
+   for (int c = 1; c <= space; c++) {
+      a.append(" ");
+   }
+   space++;
+   for (int c = 1; c <= 2 * (n - k) - 1; c++) {
+      a.append("*");
+   }
+   a.append("\n");
+}
+System.out.println(a.toString());
+
+-------------------------------------------
+output
+**********
+****  ****
+***    ***
+**      **
+*        *
+*        *
+**      **
+***    ***
+****  ****
+**********
+
+StringBuffer a = new StringBuffer();
+int i, j, n = 5;
+// Loop to print upper half of the pattern
+for (i = 1; i <= n; i++) {
+   for (j = i; j <= n; j++) {
+      a.append("*");
+   }
+   for (j = 1; j <= (2 * i - 2); j++) {
+      a.append(" ");
+   }
+   for (j = i; j <= n; j++) {
+      a.append("*");
+   }
+   a.append("\n");
+}
+
+// Loop to print lower half of the pattern
+for (i = 1; i <= n; i++) {
+   for (j = 1; j <= i; j++) {
+      a.append("*");
+   }
+   for (j = (2 * i - 2); j < (2 * n - 2); j++) {
+      a.append(" ");
+   }
+   for (j = 1; j <= i; j++) {
+      a.append("*");
+   }
+   a.append("\n");
+}
+System.out.println(a.toString());
+-------------------------------------------
+output
+    *****
+   *****
+  *****
+ *****
+*****
+
+StringBuffer a = new StringBuffer();
+int i, j, n = 5;
+for (i = 1; i <= n; i++) {
+   /* Print spaces before stars in a row */
+   for (j = i; j < n; j++) {
+      a.append(" ");
+   }
+   /* Print rows stars after spaces in a row */
+   for (j = 1; j <= n; j++) {
+      a.append("*");
+   }
+   a.append("\n");
+}
+System.out.println(a.toString());
+-------------------------------------------
+output
+ **   **
+**** ****
+*********
+ *******
+  *****
+   ***
+    *
+
+StringBuffer a = new StringBuffer();
+int i,j, n=5;
+/* printing top semi circular shapes of heart */
+for (i = n / 2; i <= n; i += 2) {
+   /* Printing Spaces */
+   for (j = 1; j < n - i; j += 2) {
+      a.append(" ");
+   }
+   /* printing stars for left semi circle */
+   for (j = 1; j <= i; j++) {
+      a.append("*");
+   }
+   /* Printing Spaces */
+   for (j = 1; j <= n - i; j++) {
+      a.append(" ");
+   }
+   /* printing stars for right semi circle */
+   for (j = 1; j <= i; j++) {
+      a.append("*");
+   }
+   /* move to next row */
+   a.append("\n");
+}
+
+/* printing inverted start pyramid */
+for (i = n; i >= 1; i--) {
+   for (j = i; j < n; j++) {
+      a.append(" ");
+   }
+   for (j = 1; j <= (i * 2) - 1; j++) {
+      a.append("*");
+   }
+   /* move to next row */
+   a.append("\n");
+} 
+System.out.println(a.toString());
+-----------------------------------------------
+output
+    *
+   * *
+  *   *
+ *     *
+*********
+
+StringBuffer a = new StringBuffer();
+int i, space, rows = 5, star = 0;
+/* printing one row in every iteration */
+for (i = 1; i < rows; i++) {
+   /* Printing spaces */
+   for (space = 1; space <= rows - i; space++) {
+      a.append(" ");
+   }
+   /* Printing stars */
+   while (star != (2 * i - 1)) {
+      if (star == 0 || star == 2 * i - 2)
+         a.append("*");
+      else
+         a.append(" ");
+      star++;
+      ;
+   }
+   star = 0;
+   /* move to next row */
+   a.append("\n");
+}
+/* print last row */
+for (i = 0; i < 2 * rows - 1; i++) {
+   a.append("*");
+}
+System.out.println(a.toString());
+------------------------------------------------
+1. จงเขียนฟังก์ชั่น ตัดช่องว่างหัวท้ายของคำ(Trim) ของค่าที่ส่งเข้าไป   ให้เวลาทำ  2 นาที  ( 2 คะแนน)
+  ตัวอย่าง 
+         input = " Hello world "; 
+        output = "Hello world";
+
+2   จงเขียนฟังก์ชั่น หาตำแหน่งแรก(indexOf)  ของคำที่ส่งเข้าไป  ให้เวลาทำ  1 นาที  ( 1 คะแนน)
+ตัวอย่าง 
+        string intput = "Hello world";
+        string patten = "world";
+        int index =   indexOf('Hello world',   pattern");
+        output =>   index = 6
+
+
+3.  จงเขียนฟังก์ชั่น CopyTo ของ String    
+public void CopyTo(
+int sourceIndex,
+char[] destination,
+int destinationIndex,
+int count
+)
+
+Parameters
+
+sourceIndex
+Type: int
+The index of the first character in this instance to copy.
+destination
+Type:  array of char
+An array of Unicode characters to which characters in this instance are copied.
+destinationIndex
+Type: int
+The index in destination at which the copy operation begins.
+count
+Type: int
+The number of characters in this instance to copy to destination.
+
+  ให้เวลาทำ  1 นาที  ( 1 คะแนน)
+ตัวอย่าง  copy คำว่า "world"  ใน ตัวแปร input ไปใส่ ตัวแปร array char ชื่อ arraySource 
+      string intput = "Hello world";
+      char[]  arraySource = new [5];
+      CopyTo(6, arraySource, 0, 5);
+
+
+4. จงเขียนฟังก์ชั่น  Replace คำ ทีส่งเข้าไป  ให้เวลาทำ  5 นาที  ( 5 คะแนน)
+   ตัวอย่าง ให้แทนที่ ค่า 'world'  ในตัวแปร input ด้วย คำว่า  'bug'
+    string input = "Hello world 123 world 1234";
+    string pattern = "world";
+    string replace = "bug";
+    string output  = Replace(input,  pattern, replace);
+   output = "Hello bug 123 bug 1234";
+5. จงเขียน ฟังกชั่น เรียงลำดับข้อมูลตัวเลข จาก มากไปหาน้อย  ให้เวลาทำ 1 นาที  ( 1 คะแนน)
+   ตัวอย่าง 
+  int[] intputs = { 2, 5, 10,  0, 9 };
+  int[] outputs =  SortDesc(inputs);
+   output = >  10, 9, 5, 2, 0
+-----------------------------------------------------------------------
+1 .จงเขียนฟังก์ชั่น ตัดช่องว่าง(Trim) ของค่าที่ส่งเข้าไป
+function (string a) {
+   string b = "";
+   for(int i =0;i< a.length;i++){
+     if(!a[\i] == " ")  b += a[\i]
+   } return b 
+}
+
+2. จงเขียนฟังก์ชั่น หาตำแหน่งแรก(indexOf)  ของคำที่ส่งเข้าไป
+function (string a , string b) {
+  for(int i =0;i<a.length;i++){
+    int c = 0;  
+    bool f = true;
+    if(a[\i] == b && f) {  
+      c = i;
+      f = false;
+}}}
+
+3.จงเขียนฟังก์ชั่น Copy string
+string b = "test"
+string a = b;
+
+4.จงเขียนฟังก์ชั่น  Replace คำ ทีส่งเข้าไป
+function (string a , string b){
+  for(int i =0;i<a.length;i++){
+    int last = -1;
+    string buffer = "";
+    string new = "";
+    int count = 0;
+    for(int j =0;j<b.length;j++){
+      if(a[\i] == b[\j]){
+        if(i - last == 1) {
+          last = i;
+          buffer += a[\i];
+          count++;
+        } else count = 0;
+     }
+     if(count > 0) {
+        if(count == b.lenght) new += b;
+     } else new+=a[\i];
+}}}
+
+5.จงเขียน ฟังกชั่น เรียงลำดับข้อมูลตัวเลข จาก มากไปหาน้อย 
+function(int[\] a){
+  for (int i = 0; i < a.lenght; i++){
+     for (int j = a.lenght– 1; j > i; j–-){
+        if (a[\j] > a[\j - 1]){
+           int b = a[\j];
+           a[\j] = a[\j - 1];
+           a[\j - 1] = b;
+        }
+      }
+  }
+}
+-----------------------------------
+จงเขียนโปรแกรมเพื่อรับจำนวนเต็ม 1 จำนวน (มีค่าตั้งแต่ 1000 - 9999) จากนั้นให้ทำการกลับค่าของจำนวนเต็มนั้น แล้วหาผลต่างระหว่างค่าที่รับเข้ามากับผลรวมนั้น
